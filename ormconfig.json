@@ -6,6 +6,7 @@
   "password": "18101980",
   "database": "nlw_valoriza",
   "migrations": ["src/database/migrations/*.ts"],
+  "entities": ["src/entities/*.ts"],
   "cli": {
     "entitiesDir": "src/entities",
     "migrationsDir": "src/database/migrations"
