@@ -18,6 +18,8 @@ class CreateTagService {
     
     const tag = tagRepository.create({ name });
     await tagRepository.save(tag);
+    
+    return tag;
   }
 }
 
