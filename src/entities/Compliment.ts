@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryColumn } from "typeorm";
-import { JoinColumn } from "typeorm/browser";
+import { JoinColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 import { Tag } from "./Tag";
 import { User } from "./User";
