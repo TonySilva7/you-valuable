@@ -11,7 +11,8 @@ interface IComplimentRequest {
 
 class CreateComplimentService {
   
-  async execute({ tag_id, user_sender, user_receiver, message }: IComplimentRequest) {
+  async execute( { tag_id, user_sender, user_receiver, message }: IComplimentRequest ) {
+    
     const complimentRepository = getCustomRepository(ComplimentRepository);
     const userRepository = getCustomRepository(UserRepository);
     
@@ -20,7 +21,7 @@ class CreateComplimentService {
     }
     
     // Without an object, by default the element id is passed
-    const userReceiverExists = userRepository.findOne(user_receiver);
+    const userReceiverExists = await userRepository.findOne(user_receiver);
     
     if (!userReceiverExists) {
       throw new Error("User Receiver does not exists!");
