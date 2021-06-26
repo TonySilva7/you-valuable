@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import express, { Request, Response, NextFunction} from "express";
 import "express-async-errors";
 import "reflect-metadata";
@@ -6,6 +7,7 @@ import "./database";
 import { router } from "./routes";
 
 const app = express();
+dotenv.config();
 
 app.use(cors());
 app.use(express.json());
@@ -23,5 +25,6 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
     message: "Internal Server Error"
   });
 });
+
 
 app.listen(3333, () => console.log("Estou rodando...🥰"));
